@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ * dpkg-scanpackages
+ * dpkg-scanpackages.php
+ *
+ * Created by Jake Wise 06/01/2017.
+ *
+ * You are permitted to use, modify, and distribute this file in accordance with
+ * the terms of the license agreement accompanying it.
+ */
+
+require __DIR__ . '/../bootstrap.php';
+
+try {
+    $app = app_create();
+    call_user_func_array([$app, 'execute'], app_list_arguments());
+}
+catch (\RuntimeException $e) {
+    echo $e->getMessage() . PHP_EOL;
+}
+
+__HALT_COMPILER(); ?>

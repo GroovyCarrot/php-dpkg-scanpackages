@@ -1,0 +1,13 @@
+{
+  "name": "groovycarrot/dpkg-scanpackages",
+  "license": "Apache-2.0",
+  "require": {
+    "ulrichsg/getopt-php": "^2.3"
+  },
+  "bin": ["bin/dpkg-scanpackages"],
+  "autoload": {
+    "psr-4": {
+      "GroovyCarrot\\Dpkg\\": "src/"
+    }
+  }
+}
