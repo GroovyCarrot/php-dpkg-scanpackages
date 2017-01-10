@@ -37,7 +37,7 @@ class Control
     {
         $data = '';
         foreach (array_filter((array) $this) as $key => $value) {
-            $data .= $key . ': ' . $value . PHP_EOL;
+            $data .= ucfirst($key) . ': ' . $value . PHP_EOL;
         }
         return $data;
     }

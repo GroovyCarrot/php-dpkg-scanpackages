@@ -67,8 +67,6 @@ class Application
             throw new \RuntimeException("Directory '{$directory}' does not exists.");
         }
 
-        $directory = realpath($directory);
-
         $packages = [];
         foreach ($this->directoryScanner->scanForDebianPackages($directory) as $file) {
             $control = $this->controlReader->readControlFromDebianPackage($file);
@@ -82,7 +80,7 @@ class Application
         }
 
         if ($outFile) {
-            file_put_contents($file, $outFile);
+            file_put_contents($outFile, $data);
         }
         else {
             print $data;
